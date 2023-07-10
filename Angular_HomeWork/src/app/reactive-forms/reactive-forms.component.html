@@ -1,0 +1,17 @@
+建立表單讓使用者輸入 Email、電話、地址、收件人
+<form [formGroup]="nestingForm" (ngSubmit)="onSubmit2()">
+  <label for="email">Email: </label>
+  <input type="text" id="email" formControlName="email" />
+  <label for="phone">Phone: </label>
+  <input type="text" id="phone" formControlName="phone" />
+  <div formGroupName="address">
+    <h2>Address</h2>
+    <label for="street">Street: </label>
+    <input id="street" type="text" formControlName="street" />
+
+    <label for="addressee">addressee: </label>
+    <input id="addressee" type="text" formControlName="addressee" />
+  </div>
+  <p>Complete the form to enable button</p>
+  <button type="submit" [disabled]="!nestingForm.valid">Submit</button>
+</form>

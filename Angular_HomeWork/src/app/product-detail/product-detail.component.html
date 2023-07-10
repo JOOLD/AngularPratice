@@ -1,0 +1,17 @@
+<div>
+  <h1>商品詳細資料</h1>
+  <!-- 第一種 -->
+  <!-- <div *ngIf="products && product.id === productId"> -->
+  <!-- 第二種 -->
+  <div *ngIf="product">
+    <h3>
+      <a>商品名稱: {{ product.name }}</a>
+    </h3>
+    <h4>商品價格: {{ product.price }}</h4>
+
+    <h5>{{ product.description }}</h5>
+    <hr />
+
+    <button type="button" (click)="addToCart(product)">加入購物車</button>
+  </div>
+</div>

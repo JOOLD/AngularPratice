@@ -1,0 +1,9 @@
+<form [formGroup]="memberLogin" (ngSubmit)="submitMemberDetail()">
+  <div class="loginDiv">
+    <label for="account">帳號</label>
+    <input type="text" formControlName="account" id="account" />
+    <label for="password">密碼</label>
+    <input type="text" formControlName="password" id="password" />
+    <button type="submit" [disabled]="!memberLogin.valid">Submit</button>
+  </div>
+</form>

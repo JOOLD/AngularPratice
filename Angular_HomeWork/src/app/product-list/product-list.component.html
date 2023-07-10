@@ -1,0 +1,19 @@
+<div>
+  <h1>我是商品選單頁面</h1>
+  <button (click)="phoneList()">手機</button>
+  <!-- [routerLink]="['/product/p', phone]"  -->
+  <!-- [routerLink]="['/product/e', earphone]"/ -->
+  <button [style]="'margin-left: 20px;'" (click)="earPhoneList()">藍芽</button>
+  <button [style]="'margin-left: 20px;'" (click)="allProducts()">
+    全部商品
+  </button>
+  <div *ngFor="let product of products">
+    <h3>
+      <a [routerLink]="['/product', product.id]"
+        >商品名稱: {{ product.name }}</a
+      >
+    </h3>
+    <h4>商品描述: {{ product.description }}</h4>
+    <hr />
+  </div>
+</div>
